@@ -1,0 +1,411 @@
+/* InspirationPage.css */
+
+/* Updated Variables with Contrasting Colors */
+:root {
+  --primary-color: #1a535c; /* Deep teal */
+  --secondary-color: #ffe66d; /* Vibrant yellow */
+  --accent-color: #ff6b6b; /* Coral red */
+  --dark-bg: #2d2d2d;
+  --light-bg: #fffcf7;
+  --text-dark: #2b2b2b;
+  --text-light: #f7fff7;
+  --overlay-gradient: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 20%,
+    rgba(0, 0, 0, 0.8) 90%
+  );
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Enhancements */
+.inspiration-page {
+  background: var(--light-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* Modern Carousel Design */
+.quote-carousel {
+  height: 100vh;
+  min-height: 600px;
+  border-radius: 0 0 2rem 2rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 4rem;
+}
+
+.carousel-img {
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  filter: grayscale(20%);
+}
+
+.carousel-caption {
+  background: var(--overlay-gradient);
+  padding: 3rem 15% !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: left;
+}
+
+.carousel-caption h3 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--text-light);
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-caption p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  max-width: 800px;
+  line-height: 1.4;
+}
+
+/* Artisan Cards Grid */
+.artisan-card {
+  background: white;
+  border-radius: 1.5rem !important;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.artisan-card:hover {
+  transform: translateY(-0.5rem) scale(1.02);
+  box-shadow: var(--shadow-md);
+}
+
+.artisan-img {
+  height: 320px;
+  object-fit: cover;
+  object-position: center center;
+  transition: transform 0.3s ease;
+}
+
+.artisan-card:hover .artisan-img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 2rem !important;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.blockquote {
+  border-left: 4px solid var(--secondary-color);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Pagination Container */
+.pagination-container {
+  position: relative;
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+  display: inline-flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Pagination Toggle Button */
+.pagination-toggle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  border-radius: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.pagination-toggle:hover {
+  background: var(--accent-color);
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Collapsed States */
+.pagination-toggle.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.pagination-controls.collapsed {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+}
+
+/* Pagination Items */
+.pagination {
+  margin: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.page-item .page-link {
+  border-radius: 0.75rem !important;
+  border: none !important;
+  color: var(--primary-color);
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.page-item.active .page-link {
+  background: var(--primary-color) !important;
+  color: white !important;
+}
+
+.page-link:hover {
+  background: rgba(26, 83, 92, 0.08) !important;
+}
+
+/* Close Button */
+.close-pagination {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dark) !important;
+  opacity: 0.7;
+  padding: 0.5rem !important;
+}
+
+.close-pagination:hover {
+  opacity: 1;
+}
+
+/* Enhanced Modal Design */
+.modal-content {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: none;
+  box-shadow: var(--shadow-md);
+}
+
+.modal-header {
+  background: var(--primary-color);
+  color: white;
+  padding: 1.5rem 2rem;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.modal-body {
+  padding: 2rem;
+  line-height: 1.7;
+}
+
+.modal-body img {
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-links .btn {
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background: var(--primary-color);
+  color: white;
+  padding: 4rem 2rem;
+  border-radius: 2rem;
+  margin: 4rem 0;
+}
+
+.newsletter-section h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.newsletter-section .form-control {
+  border-radius: 0.75rem;
+  padding: 1rem;
+  border: none;
+}
+
+.newsletter-section .btn-primary {
+  background: var(--secondary-color);
+  color: var(--text-dark);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.newsletter-section .btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .quote-carousel {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .carousel-caption h3 {
+    font-size: 2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.25rem;
+  }
+
+  .artisan-img {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-carousel {
+    height: 50vh;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .carousel-caption {
+    padding: 2rem 1.5rem !important;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-caption p {
+    font-size: 1.1rem;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  .pagination-controls {
+    padding: 0.5rem;
+    border-radius: 1rem;
+  }
+
+  .page-item .page-link {
+    min-width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+
+  .pagination-toggle {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .artisan-card {
+    margin-bottom: 2.5rem;
+  }
+
+  .newsletter-section {
+    padding: 2.5rem 1.5rem;
+    border-radius: 1rem;
+  }
+
+  .social-links {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-controls {
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  .close-pagination {
+    position: static;
+    transform: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+/* Micro-interactions */
+.btn {
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 3px rgba(26, 83, 92, 0.3);
+}
+
+/* Loading Animation */
+.carousel-loading {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Accessibility Focus States */
+*:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
